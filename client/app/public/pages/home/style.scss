@@ -1,0 +1,33 @@
+.caption-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin: 0 auto;
+  z-index: 1;
+  max-width: 500px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  & .card-title {
+    font-size: larger;
+    background:#FFCDD2	;
+    box-shadow: 10px 0 0 #FFCDD2	,-10px 0 0 #FFCDD2	;
+  }
+
+  & .card-caption {
+    display: inline;
+    background:#FFCDD2	;
+    box-shadow: 10px 0 0 #FFCDD2	,-10px 0 0 #FFCDD2	;
+    font-weight: 700;
+    font-size: large;
+  }
+}
+
+.register-card {
+  z-index: 1;
+  border-radius: 0px;
+
+  & .sign-up-btn{
+    border-radius: 0px;
+  }
+}

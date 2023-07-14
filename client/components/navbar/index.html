@@ -1,0 +1,59 @@
+<template name="componentsNavbar">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <h4>SNALUATE</h4>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-list navbar-nav m-auto d-flex">
+          <li class="nav-item">
+            <a
+              class="nav-link {{isActiveRoute 'public.home'}}"
+              aria-current="page"
+              href="{{pathFor 'public.home'}}"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {{isActiveRoute 'public.about'}}"
+              href="{{pathFor 'public.about'}}"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {{isActiveRoute 'public.comments'}}"
+              href="{{pathFor 'public.comments'}}"
+              >Comments</a
+            >
+          </li>
+          <li class="recipes nav-item">
+            <a
+              class="nav-link {{isActiveRoute 'public.recipes'}}"
+              href="{{pathFor 'public.recipes'}}"
+              >Recipes <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="{{pathFor 'public.recipe-category'}}">Main Course</a>
+              <a href="{{pathFor 'public.recipe-category'}}">Soups</a>
+              <a href="{{pathFor 'public.recipe-category'}}">Salads</a>
+              <a href="{{pathFor 'public.recipe-category'}}">Snacks</a>
+              <a href="{{pathFor 'public.recipe-category'}}">Desserts</a>
+              <a href="{{pathFor 'public.recipe-category'}}">Drinks</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>

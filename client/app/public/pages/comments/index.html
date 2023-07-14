@@ -1,0 +1,55 @@
+<template name="pagesComments">
+  {{#let comments=(state.get 'comments')}}
+
+  <div class="d-flex justify-content-between">
+    <h3>Recent Comments</h3>
+
+    <button class="btn btn-outline-primary comment-create">New comment!</button>
+  </div>
+
+  <div class="row mt-3">
+    {{#each comments}}
+    <div class="col-sm-6 col-md-4 col-lg-3 g-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{explanation}}</p>
+          <span
+            ><i class="fa-solid fa-star" style="color: #f7fa1e"></i>
+            <i class="fa-solid fa-star" style="color: #f7fa1e"></i>
+            <i class="fa-solid fa-star" style="color: #f7fa1e"></i>
+            <i class="fa-solid fa-star" style="color: #f7fa1e"></i>
+            <i class="fa-solid fa-star" style="color: #f7fa1e"></i>
+          </span>
+          <div class="card-footer d-flex justify-content-between">
+            <small class="text-muted"
+              >{{formatDateTime updatedAt}} {{formatDateTime createdAt}}</small
+            >
+
+            <div
+              class="btn-group btn-group-sm"
+              role="group"
+              aria-label="Small button group"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-primary comment-update"
+              >
+                <i class="ri-ball-pen-fill"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary comment-delete"
+              >
+                <i class="ri-delete-bin-7-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  {{/let}} {{>publicModalsCommentCreate}} {{>publicModalsCommentUpdate}}
+</template>

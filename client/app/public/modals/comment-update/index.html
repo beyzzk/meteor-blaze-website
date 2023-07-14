@@ -1,0 +1,60 @@
+<template name="publicModalsCommentUpdate">
+  {{#let _comment=(appUtil.temp.get 'comment')}}
+
+  <div class="modal" id="publicModalsCommentUpdateModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update your comment</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form
+            id="publicModalsCommentUpdateForm"
+            class="d-flex flex-column gap-2"
+          >
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                name="title"
+                value="{{_comment.title}}"
+                id="publicModalsCommentUpdateInputTitle"
+              />
+              <label for="publicModalsCommentUpdateInputTitle">Title</label>
+            </div>
+
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                name="explanation"
+                id="publicModalsCommentUpdateInputExplanation"
+                style="height: 100px"
+                value="{{_comment.explanation}}"
+              ></textarea>
+              <label for="publicModalsCommentUpdateInputExplanation"
+                >Explanation</label
+              >
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            form="publicModalsCommentUpdateForm"
+            class="btn btn-primary"
+          >
+            Save the changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/let}}
+</template>
